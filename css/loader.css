@@ -1,0 +1,178 @@
+.loading2#hotelFilterData,.loading2 #tourFilterData1,.loading2 #transportFilterData {
+    opacity: .3
+}
+
+.loading2 .circle-loader1 {
+    display: block
+}
+
+.circle-loader1 {
+    position: relative;
+    left: 50%;
+    top: 350px;
+    width: 55px;
+    border: 3px dotted #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 999
+}
+
+.circle-loader1::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px dotted var(--primary-color1);
+    border-style: solid solid dotted;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rotationBack 1s linear infinite;
+    transform-origin: center center
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+
+.egns-preloader {
+    position: fixed!important;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.egns-preloader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: -1
+}
+
+.egns-preloader .circle-border {
+    width: 100%;
+    max-width: 140px;
+    height: 100%;
+    max-height: 140px;
+    border: 0 solid var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 2px 2px 30px rgba(0,0,0,.1)
+}
+
+.egns-preloader .circle-border svg {
+    fill: var(--primary-color1)
+}
+
+.egns-preloader .circle-border svg path {
+    stroke: var(--primary-color1)
+}
+
+.egns-preloader .circle-border .moving-circle {
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color1);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: auto;
+    animation: circle 2s linear infinite
+}
+
+.egns-preloader .circle-border .moving-circle:nth-child(2) {
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color1);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: auto;
+    animation: circle 2.25s linear infinite
+}
+
+.egns-preloader .circle-border .moving-circle:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color1);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: auto;
+    animation: circle 2.5s linear infinite
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) translate(-70px) rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-70px) rotate(-360deg)
+    }
+}
+
+.egns-preloader.close {
+    display: none;
+    visibility: hidden
+}
+
+.preloader-close-btn {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    font-size: 16px;
+    transition: ease-in-out .5s linear;
+    text-transform: uppercase;
+    font-weight: 400;
+    cursor: pointer
+}
